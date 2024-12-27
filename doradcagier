@@ -1,0 +1,880 @@
+print("Witaj w doradcy gier ! Pomozemy ci dobrac gre do twoich preferencji\n")
+
+# Baza gier
+gry = {
+
+    "FIFA 24 (EA Sports FC 24)": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "NBA 2K24": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Madden NFL 24": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "PGA Tour 2K23": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "MLB The Show 23": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "NHL 24": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Tony Hawk’s Pro Skater 1+2": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Riders Republic": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "WWE 2K23": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "The Witcher 3: Wild Hunt": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Red Dead Redemption 2": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Baldur’s Gate 3": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Cyberpunk 2077": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Mass Effect Legendary Edition": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Horizon Forbidden West": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Dragon Age: Inquisition": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Starfield": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "The Elder Scrolls V: Skyrim": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": False
+    },
+    "Divinity: Original Sin 2": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "The Forest": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "DayZ": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Rust": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "7 Days to Die": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": False
+    },
+    "Ark: Survival Evolved": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Subnautica": {
+        "kategoria": "Survivalowa",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Valheim": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Don't Starve Together": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": False
+    },
+    "Green Hell": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Minecraft": {
+        "kategoria": "Survivalowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": False
+    },
+    "Resident Evil 4 Remake": {
+        "kategoria": "Horror",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Silent Hill 2": {
+        "kategoria": "Horror",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Outlast Trials": {
+        "kategoria": "Horror",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Dead Space": {
+        "kategoria": "Horror",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Amnesia: The Bunker": {
+        "kategoria": "Horror",
+        "multiplayer": False,
+        "difficulty": "hard",
+        "story": True,
+        "exploration": False,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Layers of Fear": {
+        "kategoria": "Horror",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": False,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Phasmophobia": {
+        "kategoria": "Horror",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "SOMA": {
+        "kategoria": "Horror",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "The Dark Pictures Anthology": {
+        "kategoria": "Horror",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": False,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Devour": {
+        "kategoria": "Horror",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": False
+    },
+    "Microsoft Flight Simulator": {
+        "kategoria": "Symulatory",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Farming Simulator 22": {
+        "kategoria": "Symulatory",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Euro Truck Simulator 2": {
+        "kategoria": "Symulatory",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Train Sim World 4": {
+        "kategoria": "Symulatory",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "The Sims 4": {
+        "kategoria": "Symulatory",
+        "multiplayer": False,
+        "difficulty": "easy",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "BeamNG.drive": {
+        "kategoria": "Symulatory",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Car Mechanic Simulator 2021": {
+        "kategoria": "Symulatory",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Bus Simulator 21": {
+        "kategoria": "Symulatory",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Cities: Skylines II": {
+        "kategoria": "Symulatory",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Construction Simulator": {
+        "kategoria": "Symulatory",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Forza Horizon 5": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Gran Turismo 7": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Assetto Corsa Competizione": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Project CARS 2": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Need for Speed Unbound": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "F1 23": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Dirt Rally 2.0": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "hard",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "The Crew Motorfest": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Wreckfest": {
+        "kategoria": "Wyścigowa",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    }
+
+    "Call of Duty: Modern Warfare III": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "high",
+        "story": True,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Counter-Strike 2": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "high",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Battlefield 2042": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Rainbow Six Siege": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "high",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Escape from Tarkov": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "very high",
+        "story": False,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Apex Legends": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Overwatch 2": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "DOOM Eternal": {
+        "kategoria": "Strzelanka",
+        "multiplayer": False,
+        "difficulty": "high",
+        "story": True,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Destiny 2": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Halo Infinite": {
+        "kategoria": "Strzelanka",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    }
+
+    "FIFA 24 (EA Sports FC 24)": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "NBA 2K24": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Madden NFL 24": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "PGA Tour 2K23": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": False,
+        "graphics": True
+    },
+    "MLB The Show 23": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "NHL 24": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Tony Hawk’s Pro Skater 1+2": {
+        "kategoria": "Sportowe",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Riders Republic": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "WWE 2K23": {
+        "kategoria": "Sportowe",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": False,
+        "exploration": False,
+        "fast_action": True,
+        "graphics": True
+    }
+
+    "The Witcher 3: Wild Hunt": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Red Dead Redemption 2": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Baldur’s Gate 3": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "high",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Cyberpunk 2077": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Mass Effect Legendary Edition": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Horizon Forbidden West": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": True,
+        "graphics": True
+    },
+    "Dragon Age: Inquisition": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Starfield": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "The Elder Scrolls V: Skyrim": {
+        "kategoria": "Fabularna",
+        "multiplayer": False,
+        "difficulty": "medium",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    },
+    "Divinity: Original Sin 2": {
+        "kategoria": "Fabularna",
+        "multiplayer": True,
+        "difficulty": "high",
+        "story": True,
+        "exploration": True,
+        "fast_action": False,
+        "graphics": True
+    }
+}
+
+}
+
+
+
+
+
+
+
+# Lista dostępnych kategorii
+kategorie = [
+    "sportowa", "fabularna", "survivalowa", "horror", "symulator",
+    "wyscigowa", "strzelanka", "akcja", "rpg", "przygodowe", "strategiczne"
+]
+
+# Funkcja wyboru gry
+def wybierz_gre():
+    kategoria = input(f"Jaka kategoria gry Cię interesuje z podanych: {', '.join(kategorie)}?\n")
+    if kategoria not in kategorie:
+        print("Nie ma takiej kategorii. Spróbuj jeszcze raz.")
+        return
+
+    ile_osob = input("Wolisz gry jednoosobowe, czy wieloosobowe?\n").strip().lower()
+    if ile_osob not in ["jednoosobowe", "wieloosobowe"]:
+        print("Źle wpisałeś odpowiedź. Spróbuj jeszcze raz.")
+        return
+
+    trudnosc = input("Wolisz gry trudne, średnie czy łatwe?\n").strip().lower()
+    if trudnosc not in ["trudne", "średnie", "łatwe"]:
+        print("Źle wpisałeś odpowiedź. Spróbuj jeszcze raz.")
+        return
+
+    fabula = input("Czy gra ma mieć głęboką fabułę? (tak/nie)\n").strip().lower()
+    if fabula not in ["tak", "nie"]:
+        print("Źle wpisałeś odpowiedź. Spróbuj jeszcze raz.")
+        return
+
+    eksploracja = input("Wolisz eksplorować świat, czy szybką akcję? (eksplorować świat/szybka akcja)\n").strip().lower()
+    if eksploracja not in ["eksplorować świat", "szybka akcja"]:
+        print("Źle wpisałeś odpowiedź. Spróbuj jeszcze raz.")
+        return
+
+    grafika = input("Czy zależy Ci na dopracowanej grafice? (tak/nie)\n").strip().lower()
+    if grafika not in ["tak", "nie"]:
+        print("Źle wpisałeś odpowiedź. Spróbuj jeszcze raz.")
+        return
+
+    # Szukanie gier spełniających kryteria
+    print("\nTwoje wyniki:")
+    znaleziono = False
+    for gra, dane in gry.items():
+        if (
+            dane["kategoria"] == kategoria and
+            dane["ile_osob"] == ile_osob and
+            dane["trudnosc"] == trudnosc and
+            dane["fabula"] == fabula and
+            dane["eksploracja"] == eksploracja and
+            dane["grafika"] == grafika
+        ):
+            print(f"- {gra}")
+            znaleziono = True
+
+    if not znaleziono:
+        print("Niestety, nie znaleziono gry spełniającej Twoje kryteria.")
+
+# Wywołanie funkcji
+wybierz_gre()
+
+
+# Wywołanie funkcji
+
+
+#tekst pisalam na szybko, mozecie tezpozmieniac zeby lepiej wygladalo czy cos
+
+
+
+#uznalam ze ta metoda bedzie najlepsza ale i tak nie jest idealne
+#chodzi o to zeby zrobic to samo co jest nizej tylko w roznych kombinacjach
+#& robi czesc wspolna tych list, wiec jest o tyle szybciej ze nie trzeba szukac dla kazdej gry jej cech, tylko samosie to robi
+
+#jak sie wam cos nie podoba to zmieniajcie na luzie
+#a i trzeba sprawdzic czy dla kazdej kombinacji wychodzi jakis wynik
+#w niektorych katgoriach nie trzeba tez kazdej cechy uwzgledniac np. w sportowych nie trzeba uwzgledniac fabuly
+
+
+
+
+
